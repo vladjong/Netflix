@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		29DE28892841EE2E00421A6B /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DE28882841EE2E00421A6B /* APICaller.swift */; };
+		29DE288B2842330B00421A6B /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DE288A2842330B00421A6B /* Movie.swift */; };
+		29DE288D2842628B00421A6B /* Tv.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DE288C2842628B00421A6B /* Tv.swift */; };
+		29DE288F284267DB00421A6B /* ComingSoon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DE288E284267DB00421A6B /* ComingSoon.swift */; };
+		29DE28912842712400421A6B /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DE28902842712400421A6B /* Extension.swift */; };
 		29F12C4228410C33007F9320 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F12C4128410C33007F9320 /* AppDelegate.swift */; };
 		29F12C4428410C33007F9320 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F12C4328410C33007F9320 /* SceneDelegate.swift */; };
 		29F12C4628410C33007F9320 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F12C4528410C33007F9320 /* MainTabBarViewController.swift */; };
@@ -21,6 +26,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		29DE28882841EE2E00421A6B /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
+		29DE288A2842330B00421A6B /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		29DE288C2842628B00421A6B /* Tv.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tv.swift; sourceTree = "<group>"; };
+		29DE288E284267DB00421A6B /* ComingSoon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComingSoon.swift; sourceTree = "<group>"; };
+		29DE28902842712400421A6B /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		29F12C3E28410C33007F9320 /* Netflix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Netflix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29F12C4128410C33007F9320 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		29F12C4328410C33007F9320 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -112,6 +122,9 @@
 		29F12C6128412B77007F9320 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				29DE288A2842330B00421A6B /* Movie.swift */,
+				29DE288C2842628B00421A6B /* Tv.swift */,
+				29DE288E284267DB00421A6B /* ComingSoon.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -119,6 +132,7 @@
 		29F12C6328412BB7007F9320 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				29DE28902842712400421A6B /* Extension.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -126,6 +140,7 @@
 		29F12C6428412BC3007F9320 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				29DE28882841EE2E00421A6B /* APICaller.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -203,11 +218,16 @@
 				29F12C5B28410F3C007F9320 /* SearchViewController.swift in Sources */,
 				29F12C4628410C33007F9320 /* MainTabBarViewController.swift in Sources */,
 				29F12C6628412C3A007F9320 /* CollectionViewTableViewCell.swift in Sources */,
+				29DE28892841EE2E00421A6B /* APICaller.swift in Sources */,
 				29F12C68284136B1007F9320 /* HeroHeaderUIView.swift in Sources */,
+				29DE288D2842628B00421A6B /* Tv.swift in Sources */,
+				29DE288F284267DB00421A6B /* ComingSoon.swift in Sources */,
 				29F12C5D28410F68007F9320 /* DownloadsViewController.swift in Sources */,
 				29F12C5928410F0C007F9320 /* UpCommingViewController.swift in Sources */,
+				29DE28912842712400421A6B /* Extension.swift in Sources */,
 				29F12C4228410C33007F9320 /* AppDelegate.swift in Sources */,
 				29F12C4428410C33007F9320 /* SceneDelegate.swift in Sources */,
+				29DE288B2842330B00421A6B /* Movie.swift in Sources */,
 				29F12C5728410EBB007F9320 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
