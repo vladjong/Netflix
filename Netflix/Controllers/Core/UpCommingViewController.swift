@@ -11,7 +11,6 @@ class UpCommingViewController: UIViewController {
     
     private var titles: [Title] = [Title]()
     
-
     private let upcomingTable: UITableView = {
         let table = UITableView()
         table.register(TitleTableViewCell.self, forCellReuseIdentifier: TitleTableViewCell.identifier)
@@ -48,12 +47,11 @@ class UpCommingViewController: UIViewController {
             }
         }
     }
-    
-    
 }
 
 
 extension UpCommingViewController: UITableViewDelegate, UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return titles.count
     }

@@ -114,6 +114,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         default:
             return UITableViewCell()
         }
+        
         return cell
     }
     
@@ -143,4 +144,6 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 
         navigationController?.navigationBar.transform = .init(translationX: 0, y: min(0, -offset))
     }
+    
+    
 }
