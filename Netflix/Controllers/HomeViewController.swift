@@ -7,6 +7,13 @@
 
 import UIKit
 
+enum Sections: Int {
+    case TrendingMovies = 0
+    case UpcomingMovies = 1
+    case TrendingTv = 2
+    case TopRated = 3
+}
+
 class HomeViewController: UIViewController {
     
     let sectionTitles : [String] = [
@@ -31,7 +38,6 @@ class HomeViewController: UIViewController {
         configureNavBar()
         let headerView = HeroHeaderUIView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 450))
         homeFeedTable.tableHeaderView = headerView
-        fetchData()
     }
     
     private func configureNavBar() {
@@ -49,45 +55,6 @@ class HomeViewController: UIViewController {
         super.viewDidLayoutSubviews()
         homeFeedTable.frame = view.bounds
     }
-    
-    private func fetchData() {
-//        APICaller.shared.getTrendingMovies { items in
-//            switch items {
-//            case .success(let movies):
-//                print(movies)
-//            case .failure(let error):
-//                print(error)
-//            }
-//        }
-//
-//        APICaller.shared.getTrendingTV { items in
-//            switch items {
-//            case .success(let tvs):
-//                print(tvs)
-//            case .failure(let error):
-//                print(error)
-//            }
-//        }
-        
-//        APICaller.shared.getTopRatedMovies { items in
-//            switch items {
-//            case .success(let topRatedMovies):
-//                print(topRatedMovies)
-//            case .failure(let error):
-//                print(error)
-//            }
-//        }
-        
-        APICaller.shared.getComingSoonMovies { _ in
-//            switch items {
-//            case .success(let tvs):
-//                print(tvs)
-//            case .failure(let error):
-//                print(error)
-//            }
-        }
-        
-    }
 }
 
 
@@ -104,6 +71,47 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: CollectionViewTableViewCell.identifier,
                                                        for: indexPath) as? CollectionViewTableViewCell else {
+            return UITableViewCell()
+        }
+        
+        switch indexPath.section {
+        case Sections.TrendingMovies.rawValue:
+            APICaller.shared.getTrendingMovies { result in
+                switch result {
+                case .success(let titles):
+                    cell.configure(with: titles)
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+            }
+        case Sections.UpcomingMovies.rawValue:
+            APICaller.shared.getComingSoonMovies { result in
+                switch result {
+                case .success(let titles):
+                    cell.configure(with: titles)
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+            }
+        case Sections.TrendingTv.rawValue:
+            APICaller.shared.getTrendingTV { result in
+                switch result {
+                case .success(let titles):
+                    cell.configure(with: titles)
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+            }
+        case Sections.TopRated.rawValue:
+            APICaller.shared.getTopRatedMovies { result in
+                switch result {
+                case .success(let titles):
+                    cell.configure(with: titles)
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+            }
+        default:
             return UITableViewCell()
         }
         return cell
@@ -135,6 +143,4 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 
         navigationController?.navigationBar.transform = .init(translationX: 0, y: min(0, -offset))
     }
-    
-    
 }
