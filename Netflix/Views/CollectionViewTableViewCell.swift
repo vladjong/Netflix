@@ -84,7 +84,7 @@ extension CollectionViewTableViewCell: UICollectionViewDelegate, UICollectionVie
             switch result {
             case .success(let videoElement):
                 let title = self?.titles[indexPath.row]
-                guard let titleOverview = title?.crew else {return}
+                guard let titleOverview = title?.title else {return}
                 guard let strongSelf = self else {return}
                 let viewModel = TitlePreviewViewModel(title: titleName, youtubeView: videoElement, titleOverview: titleOverview)
                 self?.delegate?.collectionViewTableViewCellDidTapCell(strongSelf, viewModel: viewModel)
