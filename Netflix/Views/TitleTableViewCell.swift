@@ -74,5 +74,4 @@ class TitleTableViewCell: UITableViewCell {
     required init(coder: NSCoder) {
         fatalError()
     }
-    
 }

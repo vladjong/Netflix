@@ -21,6 +21,7 @@ enum APIError:Error {
 }
 
 class APICaller {
+    
     static let shared = APICaller()
     
     func getTrendingMovies(completion: @escaping (Result<[Title], Error>) -> Void) {
@@ -41,71 +42,71 @@ class APICaller {
     }
     
     func getTrendingTV(completion: @escaping (Result<[Title], Error>) -> Void) {
-//        guard let url = URL(string: "\(Constants.BASE_URL)/MostPopularTVs/\(Constants.API_KEY)") else {return}
-//
-//        let task = URLSession.shared.dataTask(with: URLRequest(url: url)) { data, _, error in
-//            guard let data = data, error == nil else {
-//                return
-//            }
-//            do {
-//                let items = try JSONDecoder().decode(TrendingTitleResponse.self, from: data)
-//                completion(.success(items.items))
-//            } catch {
-//                completion(.failure(APIError.failedToGetData))
-//            }
-//        }
-//        task.resume()
+        guard let url = URL(string: "\(Constants.BASE_URL)/MostPopularTVs/\(Constants.API_KEY)") else {return}
+
+        let task = URLSession.shared.dataTask(with: URLRequest(url: url)) { data, _, error in
+            guard let data = data, error == nil else {
+                return
+            }
+            do {
+                let items = try JSONDecoder().decode(TrendingTitleResponse.self, from: data)
+                completion(.success(items.items))
+            } catch {
+                completion(.failure(APIError.failedToGetData))
+            }
+        }
+        task.resume()
     }
     
     func getTopRatedMovies(completion: @escaping (Result<[Title], Error>) -> Void) {
-//        guard let url = URL(string: "\(Constants.BASE_URL)/Top250Movies/\(Constants.API_KEY)") else {return}
-//
-//        let task = URLSession.shared.dataTask(with: URLRequest(url: url)) { data, _, error in
-//            guard let data = data, error == nil else {
-//                return
-//            }
-//            do {
-//                let items = try JSONDecoder().decode(TrendingTitleResponse.self, from: data)
-//                completion(.success(items.items))
-//            } catch {
-//                completion(.failure(APIError.failedToGetData))
-//            }
-//        }
-//        task.resume()
+        guard let url = URL(string: "\(Constants.BASE_URL)/Top250Movies/\(Constants.API_KEY)") else {return}
+
+        let task = URLSession.shared.dataTask(with: URLRequest(url: url)) { data, _, error in
+            guard let data = data, error == nil else {
+                return
+            }
+            do {
+                let items = try JSONDecoder().decode(TrendingTitleResponse.self, from: data)
+                completion(.success(items.items))
+            } catch {
+                completion(.failure(APIError.failedToGetData))
+            }
+        }
+        task.resume()
     }
 
     func getComingSoonMovies(completion: @escaping (Result<[Title], Error>) -> Void) {
-//        guard let url = URL(string: "\(Constants.BASE_URL)/ComingSoon/\(Constants.API_KEY)") else {return}
-//
-//        let task = URLSession.shared.dataTask(with: URLRequest(url: url)) { data, _, error in
-//            guard let data = data, error == nil else {
-//                return
-//            }
-//            do {
-//                let items = try JSONDecoder().decode(TrendingTitleResponse.self, from: data)
-//                completion(.success(items.items))
-//            } catch {
-//                completion(.failure(APIError.failedToGetData))
-//            }
-//        }
-//        task.resume()
+        guard let url = URL(string: "\(Constants.BASE_URL)/ComingSoon/\(Constants.API_KEY)") else {return}
+
+        let task = URLSession.shared.dataTask(with: URLRequest(url: url)) { data, _, error in
+            guard let data = data, error == nil else {
+                return
+            }
+            do {
+                let items = try JSONDecoder().decode(TrendingTitleResponse.self, from: data)
+                completion(.success(items.items))
+            } catch {
+                completion(.failure(APIError.failedToGetData))
+            }
+        }
+        task.resume()
     }
     
     func search(with query: String, completion: @escaping (Result<[Title], Error>) -> Void) {
-//        guard let url = URL(string: "\(Constants.BASE_URL)/ComingSoon/\(Constants.API_KEY)") else {return}
-//
-//        let task = URLSession.shared.dataTask(with: URLRequest(url: url)) { data, _, error in
-//            guard let data = data, error == nil else {
-//                return
-//            }
-//            do {
-//                let items = try JSONDecoder().decode(TrendingTitleResponse.self, from: data)
-//                completion(.success(items.items))
-//            } catch {
-//                completion(.failure(APIError.failedToGetData))
-//            }
-//        }
-//        task.resume()
+        guard let url = URL(string: "\(Constants.BASE_URL)/ComingSoon/\(Constants.API_KEY)") else {return}
+
+        let task = URLSession.shared.dataTask(with: URLRequest(url: url)) { data, _, error in
+            guard let data = data, error == nil else {
+                return
+            }
+            do {
+                let items = try JSONDecoder().decode(TrendingTitleResponse.self, from: data)
+                completion(.success(items.items))
+            } catch {
+                completion(.failure(APIError.failedToGetData))
+            }
+        }
+        task.resume()
     }
     
     func getMovie(with query: String, completion: @escaping (Result<VideoElement, Error>) -> Void) {
