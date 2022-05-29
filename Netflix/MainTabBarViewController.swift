@@ -24,8 +24,8 @@ class MainTabBarViewController: UITabBarController {
         vc3.tabBarItem.image = UIImage(systemName: "magnifyingglass")
         vc4.tabBarItem.image = UIImage(systemName: "arrow.down.to.line")
         
-        vc1.title = "home"
-        vc2.title = "Comming Soon"
+        vc1.title = "Home"
+        vc2.title = "Coming soon"
         vc3.title = "Search"
         vc4.title = "Downloads"
         
