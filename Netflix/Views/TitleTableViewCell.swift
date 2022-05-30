@@ -10,18 +10,10 @@ import UIKit
 class TitleTableViewCell: UITableViewCell {
     
     static let identifier = "TitleTableViewCell"
-    
-    private let playTitlesButton: UIButton = {
-        let button = UIButton()
-        let image = UIImage(systemName: "play.circle", withConfiguration: UIImage.SymbolConfiguration(pointSize: 30))
-        button.setImage(image, for: .normal)
-        button.tintColor = .white
-        button.translatesAutoresizingMaskIntoConstraints = false
-        return button
-    }()
-    
+        
     private let titleLabel: UILabel = {
         let label = UILabel()
+        label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -38,7 +30,6 @@ class TitleTableViewCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         contentView.addSubview(titlePostersUIImageView)
         contentView.addSubview(titleLabel)
-        contentView.addSubview(playTitlesButton)
         applyConstraint()
     }
     
@@ -52,17 +43,12 @@ class TitleTableViewCell: UITableViewCell {
         
         let titleLabelConstraints = [
             titleLabel.leadingAnchor.constraint(equalTo: titlePostersUIImageView.trailingAnchor, constant: 20),
-            titleLabel.centerYAnchor.constraint(equalTo: centerYAnchor.self)
-        ]
-        
-        let playTitlesButtonConstraints = [
-            playTitlesButton.leadingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -45),
-            playTitlesButton.centerYAnchor.constraint(equalTo: contentView.centerYAnchor)
+            titleLabel.centerYAnchor.constraint(equalTo: centerYAnchor.self),
+            titleLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor,constant: 5)
         ]
         
         NSLayoutConstraint.activate(titlePostersUIImageViewConstraints)
         NSLayoutConstraint.activate(titleLabelConstraints)
-        NSLayoutConstraint.activate(playTitlesButtonConstraints)
     }
     
     public func configure(with model: TitleViewModel) {

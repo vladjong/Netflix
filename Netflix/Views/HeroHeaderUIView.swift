@@ -75,10 +75,14 @@ class HeroHeaderUIView: UIView {
         NSLayoutConstraint.activate(downloadButtonConstraint)
     }
     
+    public func configure(with model: TitleViewModel) {
+        guard let url = URL(string: model.posterURL) else { return }
+        heroImageView.sd_setImage(with: url, completed: nil)
+    }
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         heroImageView.frame = bounds
-        
     }
     
     required init?(coder: NSCoder) {
