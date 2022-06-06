@@ -1,4 +1,4 @@
-![](img/Netflix.png)
+![](Netflix.png)
 
 ### Describe
 
