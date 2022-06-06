@@ -18,6 +18,6 @@ $ open Netflix.xcodeproj
 
 ### Example
 
-![](img/example.gif)
+![](example.gif)
 
 ---
