@@ -8,8 +8,8 @@ This project introduced me to the MVVM pattern.
 
 ### API
 [Example]: http://example.com/
-[OMDb API]: https://www.omdbapi.com/
-[YouTube Data API]: https://developers.google.com/youtube/v3/
+<!-- [OMDb API]: https://www.omdbapi.com/
+[YouTube Data API]: https://developers.google.com/youtube/v3/ -->
 
 ### Use
 ```
