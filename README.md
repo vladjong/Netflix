@@ -7,9 +7,8 @@ The application allows you to view trailers for your favorite movies
 This project introduced me to the MVVM pattern.
 
 ### API
-[example.com](http://example.com)
-[OMDb API]: https://www.omdbapi.com/
-[YouTube Data API]:https://developers.google.com/youtube/v3/
+- [OMDb API]: https://www.omdbapi.com/
+- [YouTube Data API]:https://developers.google.com/youtube/v3/
 
 ### Use
 ```
